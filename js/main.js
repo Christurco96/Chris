@@ -136,17 +136,16 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (scrolledIn > distance) targetVidProgress = 1;
       else targetVidProgress = scrolledIn / distance;
 
-      currentVidProgress = vidLerp(currentVidProgress, targetVidProgress, 0.12); 
+      currentVidProgress = vidLerp(currentVidProgress, targetVidProgress, 0.15); 
       
       const clipX = 25 - (25 * currentVidProgress); 
       const clipY = 15 - (15 * currentVidProgress); 
       const currentRadius = Math.max(16, 40 - (24 * currentVidProgress)); 
       
-      // Use CSS variables or direct style updates (direct style is faster for clip-path)
       const clipPath = `inset(${clipY}% ${clipX}% round ${currentRadius}px)`;
       videoWrapper.style.clipPath = clipPath;
       videoWrapper.style.webkitClipPath = clipPath;
-      videoWrapper.style.opacity = Math.min(1, 0.1 + (1.5 * currentVidProgress));
+      // Opacity is now handled by CSS scroll-reveal for a unified, smoother entry
       
     requestAnimationFrame(animateVideoShowcase);
   };

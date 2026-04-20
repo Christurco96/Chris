@@ -1304,8 +1304,8 @@ textarea.form-control { height: 180px; resize: none; }
 /* Utilities - Scroll Reveal */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  transform: translateY(35px);
+  transition: all 1.0s cubic-bezier(0.25, 0.1, 0.25, 1.0);
   will-change: transform, opacity;
 }
 
